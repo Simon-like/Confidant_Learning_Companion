@@ -4,7 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --mode development",
+    "test": "vite --mode test",
+    "pro": "vite --mode production",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "test:unit": "vitest",
@@ -16,9 +18,12 @@
   "dependencies": {
     "@radix-icons/vue": "^1.0.0",
     "autoprefixer": "^10.4.20",
+    "axios": "^1.7.9",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "element-plus": "^2.9.3",
     "pinia": "^2.3.0",
+    "pinia-plugin-persistedstate": "^4.2.0",
     "postcss": "^8.5.1",
     "radix-vue": "^1.9.12",
     "tailwind-merge": "^2.6.0",

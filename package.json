@@ -17,11 +17,13 @@
   },
   "dependencies": {
     "@radix-icons/vue": "^1.0.0",
+    "@vueuse/core": "^12.4.0",
     "autoprefixer": "^10.4.20",
     "axios": "^1.7.9",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "element-plus": "^2.9.3",
+    "embla-carousel-vue": "^8.5.2",
     "pinia": "^2.3.0",
     "pinia-plugin-persistedstate": "^4.2.0",
     "postcss": "^8.5.1",

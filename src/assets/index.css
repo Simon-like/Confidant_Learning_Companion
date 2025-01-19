@@ -1,12 +1,17 @@
+/* 
+  这个文件用于shadcn-vue组件库
+*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 92.2%;
+    /* 前景颜色，通常用于文本或可见的主要元素。通常前景颜色与背景颜色对比，以确保可读性。 */
+    --foreground: 214 50% 12.5%;
 
+    /* 这组颜色用于表示较为柔和、低调或淡化的颜色，通常用于背景、辅助文本等，避免显得太突出。 */
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
@@ -19,21 +24,24 @@
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
 
+    /* primary 和 secondary这两组颜色通常用来区分主要和次要的 UI 元素 */
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-
+    /* 这组颜色通常用于强调某些元素，或增加设计中的视觉层次感。 */
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
-
+    /* 这组颜色通常用于表示有破坏性或警告性质的元素（例如删除按钮、警告消息等）。 */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --ring: 222.2 84% 4.9%;
 
-    --radius: 0.5rem;
+    --radius: 3.125rem;
+    --radius-secondary: 1.5rem;
+    --radius-muted: 0.5rem;
   }
 
   .dark {
@@ -69,10 +77,41 @@
 }
 
 @layer base {
+  @font-face {
+    font-family: 'DeYiHei';
+    /* 自定义字体名称 */
+    src: url('src/assets/fonts/字魂灵悦黑体.ttf') format('truetype');
+    /* 字体文件路径 */
+    font-weight: normal;
+    font-style: normal;
+  }
+
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
+    font-family: 'DeYiHei', sans-serif;
+  }
+
+}
+
+@layer components {
+  .bgImg {
+    @apply bg-androidImg sm:bg-webImg bg-cover bg-no-repeat;
+  }
+}
+
+@layer utilities {
+  .text-title {
+    color: #000;
+    /* 字体颜色 */
+    -webkit-text-stroke: 1.5px #fff;
+    /* 黑色边框 */
+    text-shadow: 6px 6px 8px rgba(0, 0, 0, 0.8);
+    /* 阴影效果 */
+    font-weight: 550;
+    white-space: nowrap;
   }
 }

@@ -1,3 +1,4 @@
+const { buttonEmits } = require("element-plus")
 const animate = require("tailwindcss-animate")
 
 /** @type {import('tailwindcss').Config} */
@@ -5,14 +6,14 @@ module.exports = {
   darkMode: ["class"],
   safelist: ["dark"],
   prefix: "",
-  
+
   content: [
     './pages/**/*.{ts,tsx,vue}',
     './components/**/*.{ts,tsx,vue}',
     './app/**/*.{ts,tsx,vue}',
     './src/**/*.{ts,tsx,vue}',
-	],
-  
+  ],
+
   theme: {
     container: {
       center: true,
@@ -62,6 +63,9 @@ module.exports = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        cardRadius: "var(--radius)",
+        buttonRaius: "var(--radius-secondary)",
+        inputRadius: "var(--radius-muted)",
       },
       keyframes: {
         "accordion-down": {
@@ -80,12 +84,37 @@ module.exports = {
           from: { height: 'var(--radix-collapsible-content-height)' },
           to: { height: 0 },
         },
+        "sideInLeft": {
+          from: { transform: "translateX(-100%)", opacity: 0 },
+          to: { transform: "translateX(0)", opacity: 1 },
+        },
+        "sideInRight": {
+          from: { transform: "translateX(100%)", opacity: 0 },
+          to: { transform: "translateX(0)", opacity: 1 },
+        },
+        "topIn": {
+          from: { transform: "translateY(-100%)", opacity: 0 },
+          to: { transform: "translateY(0)", opacity: 1 },
+        },
+        "bottomIn": {
+          from: { transform: "translateY(100%)", opacity: 0 },
+          to: { transform: "translateY(0)", opacity: 1 },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "collapsible-down": "collapsible-down 0.2s ease-in-out",
         "collapsible-up": "collapsible-up 0.2s ease-in-out",
+        "sideInLeft": "sideInLeft 0.2s cubic-bezier(0, 0, 0.2, 1)",
+        "sideInRight": "sideInRight 0.2s cubic-bezier(0, 0, 0.2, 1)",
+        "topIn": "topIn 0.2s cubic-bezier(0, 0, 0.2, 1)",
+        "bottomIn": "bottomIn 1s cubic-bezier(0, 0, 0.2, 1)",
+      },
+      backgroundImage: {
+        "androidImg": "url('src/assets/images/bg-android.png')",
+        "webImg": "url('src/assets/images/bg-web.png')",
+        "logoImg": "url('src/assets/images/logo.png')",
       },
     },
   },

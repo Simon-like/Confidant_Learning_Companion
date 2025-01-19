@@ -12,8 +12,44 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      redirect: '/home',
+    },
+    {
+      path: '/home',
       name: 'home',
       component: () => import('@/views/Home/HomeView.vue'),
+      children: [
+        {
+          path: '',
+          name: 'MobileLogin',
+          component: () => import('@/views/Home/Layout/MobileLogin.vue'),
+        },
+        {
+          path: 'register_1',
+          name: 'MobileRegistry_1',
+          component: () => import('@/views/Home/Layout/MobileRegistry_1.vue'),
+        },
+        {
+          path: 'register_2',
+          name: 'MobileRegistry_2',
+          component: () => import('@/views/Home/Layout/MobileRegistry_2.vue'),
+        },
+        {
+          path: 'register_3',
+          name: 'MobileRegistry_3',
+          component: () => import('@/views/Home/Layout/MobileRegistry_3.vue'),
+        },
+        {
+          path: 'forget_1',
+          name: 'MobileForget_1',
+          component: () => import('@/views/Home/Layout/MobileForget_1.vue'),
+        },
+        {
+          path: 'forget_2',
+          name: 'MobileForget_2',
+          component: () => import('@/views/Home/Layout/MobileForget_2.vue'),
+        },
+      ],
     },
   ],
 })

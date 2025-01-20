@@ -7,7 +7,7 @@
 </script>
 
 <template>
-  <div class="bgImg min-h-screen">
+  <div class="bgImg min-h-screen relative">
     <!-- 移动端 -->
     <div class="sm:hidden flex flex-col w-full h-[30vh] px-6 pt-[3rem] pb-6">
       <div class="w-full flex items-center justify-between">
@@ -36,7 +36,8 @@
 
 .slide-enter-from,
 .slide-leave-to {
-  transform: translateY(100%);
+  /* transform: translateY(100%); */
+  height: 0;
   opacity: 0;
 }
 </style>

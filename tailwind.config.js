@@ -1,4 +1,5 @@
 const { buttonEmits } = require("element-plus")
+const { text } = require("stream/consumers")
 const animate = require("tailwindcss-animate")
 
 /** @type {import('tailwindcss').Config} */
@@ -56,6 +57,11 @@ module.exports = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        text: {
+          DEFAULT: "hsl(var(--text))",
+          foreground: "hsl(var(--text-foreground))",
+          blue: "hsl(var(--text-blue))",
         },
       },
       borderRadius: {

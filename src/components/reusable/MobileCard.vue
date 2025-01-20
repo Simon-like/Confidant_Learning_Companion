@@ -27,7 +27,8 @@ console.log(props.h)
 </script>
 
 <template>
-  <div class="sm:hidden fixed bottom-0 z-10 w-full bg-foreground rounded-t-cardRadius text-[1.8rem]"
+  <div
+    class="sm:hidden absolute bottom-0 z-10 w-full bg-foreground rounded-t-cardRadius text-[1.8rem] text-primary px-8 pb-8 flex flex-col items-center"
     :class="`${height_arr.find(item => item.label === props.h)?.class}`">
     <div class="w-1/4 rounded h-3 bg-white mx-auto my-4"></div>
     <slot />

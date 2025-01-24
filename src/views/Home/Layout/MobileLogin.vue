@@ -46,7 +46,7 @@ const onSubmit = handleSubmit((values) => {
       <!-- 手机号输入 -->
       <FormField v-slot="{ componentField }" name="phone" v-model="phone" :validate-on-blur="!isFieldDirty">
         <FormItem class="space-y-0" v-auto-animate>
-          <FormLabel class="text-[1.5rem] transition-all">手机号
+          <FormLabel class="text-[1.8rem] transition-all">手机号
           </FormLabel>
           <FormControl>
             <Input type="text" placeholder="请输入手机号" v-bind="componentField"
@@ -59,7 +59,7 @@ const onSubmit = handleSubmit((values) => {
       <!-- 密码输入 -->
       <FormField v-slot="{ componentField }" name="password" :validate-on-blur="!isFieldDirty">
         <FormItem class="space-y-0" v-auto-animate>
-          <FormLabel class="text-[1.5rem] transition-all">密码
+          <FormLabel class="text-[1.8rem] transition-all">密码
           </FormLabel>
           <FormControl>
             <Input type="text" placeholder="请输入密码" v-bind="componentField"

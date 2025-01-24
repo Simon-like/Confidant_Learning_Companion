@@ -43,6 +43,7 @@
     --destructive-foreground: 210 40% 98%;
 
     --ring: 222.2 84% 4.9%;
+    --ring-muted: hsla(222.2, 84%, 4.9%, 0.3);
 
     --radius: 3.125rem;
     --radius-secondary: 1.5rem;
@@ -52,6 +53,7 @@
     --text: 0 0% 92.2%;
     --text-foreground: 214 50% 12.5%;
     --text-blue: 180 100% 33.9%;
+    /* color: hsl(223, 47%, 21%); */
   }
 
   .dark {
@@ -90,7 +92,7 @@
   @font-face {
     font-family: 'DeYiHei';
     /* 自定义字体名称 */
-    src: url('src/assets/fonts/字魂灵悦黑体.ttf') format('truetype');
+    src: url('src/assets/fonts/DeYiHei.ttf') format('truetype');
     /* 字体文件路径 */
     font-weight: normal;
     font-style: normal;
@@ -114,6 +116,8 @@
 }
 
 @layer utilities {
+
+  /* 白框标题 */
   .text-title {
     color: #000;
     /* 字体颜色 */
@@ -123,5 +127,36 @@
     /* 阴影效果 */
     font-weight: 550;
     white-space: nowrap;
+  }
+
+  /* flex横向对齐填充 */
+  .line-jb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* flex居中填充 */
+  .line-jc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* flex正常堆叠 */
+  .line-js {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* flex竖向堆叠 */
+  .line-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

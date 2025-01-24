@@ -27,7 +27,10 @@ module.exports = {
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
+        ring: {
+          DEFAULT: "hsl(var(--ring))",
+          muted: "var(--ring-muted)"
+        },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
@@ -70,7 +73,7 @@ module.exports = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
         cardRadius: "var(--radius)",
-        buttonRaius: "var(--radius-secondary)",
+        buttonRadius: "var(--radius-secondary)",
         inputRadius: "var(--radius-muted)",
       },
       keyframes: {

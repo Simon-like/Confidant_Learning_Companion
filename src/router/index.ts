@@ -5,15 +5,16 @@
  * @lastModifiedBy Simon
  * @lastModifiedTime 2025-1-16
  */
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(),
   routes: [
     {
       path: '/',
       redirect: '/home',
     },
+    // 登录注册主页
     {
       path: '/home',
       name: 'home',
@@ -38,6 +39,11 @@ const router = createRouter({
           path: 'register_3',
           name: 'MobileRegistry_3',
           component: () => import('@/views/Home/Layout/MobileRegistry_3.vue'),
+        },
+        {
+          path: 'register_4',
+          name: 'MobileRegistry_4',
+          component: () => import('@/views/Home/Layout/MobileRegistry_4.vue'),
         },
         {
           path: 'forget_1',

@@ -47,3 +47,19 @@ export const debounce = (fn: Function, ms: number, Immediate: boolean = false) =
 export const deepCopy = (obj: object) => {
   return JSON.parse(JSON.stringify(obj))
 }
+
+/**
+ * 数组数据交换/覆盖，可触发动画
+ * @param A 待覆盖数组
+ * @param B 覆盖者or被交换者
+ * @param isSwap 是否交换，否则B覆盖A
+ */
+export const ArrayCover = <T>(A: T[], B: T[], isSwap: boolean = false) => {
+  const temp: T[] = A
+  while (A.length > 0) A.pop() //逐个删除，触发动画
+  B.forEach((item) => A.push(item))
+  if (isSwap) {
+    while (B.length > 0) B.pop() //逐个删除，触发动画
+    A.forEach((item) => B.push(item))
+  }
+}

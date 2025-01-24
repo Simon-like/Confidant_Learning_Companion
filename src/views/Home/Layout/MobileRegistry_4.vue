@@ -91,6 +91,7 @@ onMounted(() => {
         </ScrollArea>
         <!-- Tag选择框 -->
         <div class="h-full line-col bg-background w-[72%] rounded-buttonRadius space-y-2 p-4">
+          <!-- Tag选择区域 -->
           <ScrollArea class="flex-1 w-full">
             <div class="w-full grid grid-cols-3 gap-4" v-auto-animate>
               <div class="rounded-inputRadius bg-muted-foreground h-8 text-[1rem]/[2rem]
@@ -101,10 +102,19 @@ onMounted(() => {
               </div>
             </div>
           </ScrollArea>
-          <div class="grow-0 h-1 rounded-lg bg-foreground w-full"></div>
-          <div class="flex-1 w-full line-col">
-            <div class="text-text-blue text-[1rem] self-start ml-2">我的Tag:</div>
-          </div>
+          <div class="text-text-blue text-[1rem] self-start ml-2">我的Tag:</div>
+          <!-- 已选择的Tag -->
+          <ScrollArea class="flex-1 w-full line-col
+          border-foreground border-2 rounded-inputRadius p-1 shadow-[inset_3px_3px_4px_rgba(0,0,0,0.6)]">
+            <div class="w-full grid grid-cols-3 gap-4" v-auto-animate>
+              <div class="rounded-inputRadius bg-muted-foreground h-8 text-[1rem]/[2rem]
+              text-center text-nowrap overflow-hidden " v-for="item in Tags_content" :key="item.TagID"
+                :class="getTagClass(item.TagName)">
+                {{
+                  item.TagName }}
+              </div>
+            </div>
+          </ScrollArea>
         </div>
       </div>
 

@@ -94,7 +94,7 @@ const onSubmit = handleSubmit((values) => {
               }">
               <PinInputGroup class="w-full justify-between">
                 <PinInputInput v-for="(id, index) in 6" :key="id" :index="index"
-                  class="text-text-foreground rounded-inputRadius first:rounded last:rounded" />
+                  class="text-text-foreground rounded-inputRadius first:rounded last:rounded focus:border-2 focus:border-text-blue" />
               </PinInputGroup>
             </PinInput>
           </FormControl>

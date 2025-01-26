@@ -63,3 +63,16 @@ export const ArrayCover = <T>(A: T[], B: T[], isSwap: boolean = false) => {
     A.forEach((item) => B.push(item))
   }
 }
+
+/**
+ * 给某对象数组的每个对象添加一组属性，获得一个新的数组
+ * @param A 待添加数组
+ * @param B 添加的属性
+ * @returns
+ */
+export const mapNewArray = <T, N>(A: T[], B: N): (T & N)[] => {
+  return A.map((item) => {
+    const temp = { ...item, ...B }
+    return temp
+  })
+}

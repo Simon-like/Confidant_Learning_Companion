@@ -107,6 +107,11 @@
     font-family: 'DeYiHei', sans-serif;
   }
 
+  h1 {
+    animation: sideInLeft 1s ease-out forwards;
+    opacity: 0;
+  }
+
 }
 
 @layer components {

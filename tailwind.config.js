@@ -1,6 +1,7 @@
 const { buttonEmits } = require("element-plus")
 const { text } = require("stream/consumers")
 const animate = require("tailwindcss-animate")
+const { transform } = require("typescript")
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -109,21 +110,27 @@ module.exports = {
           from: { transform: "translateY(100%)", opacity: 0 },
           to: { transform: "translateY(0)", opacity: 1 },
         },
+        "fade": {
+          from: { transform: 'scale(0)', opacity: 0 },
+          to: { transform: 'scale(1)', opacity: 1 }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "collapsible-down": "collapsible-down 0.2s ease-in-out",
         "collapsible-up": "collapsible-up 0.2s ease-in-out",
-        "sideInLeft": "sideInLeft 0.2s cubic-bezier(0, 0, 0.2, 1)",
-        "sideInRight": "sideInRight 0.2s cubic-bezier(0, 0, 0.2, 1)",
-        "topIn": "topIn 0.2s cubic-bezier(0, 0, 0.2, 1)",
-        "bottomIn": "bottomIn 1s cubic-bezier(0, 0, 0.2, 1)",
+        "sideInLeft": "sideInLeft 1s cubic-bezier(0, 0, 0.2, 1) forwards",
+        "sideInRight": "sideInRight 1s cubic-bezier(0, 0, 0.2, 1) forwards",
+        "topIn": "topIn 1s cubic-bezier(0, 0, 0.2, 1) forwards",
+        "bottomIn": "bottomIn 1s cubic-bezier(0, 0, 0.2, 1) forwards",
+        "fade": "fade 1s cubic-bezier(0, 0, 0.2, 1) forwards",
       },
       backgroundImage: {
         "androidImg": "url('src/assets/images/bg-android.png')",
         "webImg": "url('src/assets/images/bg-web.png')",
         "logoImg": "url('src/assets/images/logo.png')",
+        "fulilian_1": "url('src/assets/images/fulilian_1.png')"
       },
     },
   },

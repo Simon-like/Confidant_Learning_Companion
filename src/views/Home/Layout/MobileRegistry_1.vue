@@ -59,7 +59,7 @@ const onSubmit = handleSubmit((values) => {
 </script>
 
 <template>
-  <MobileCard :h="'big'" :title="'绑定手机'">
+  <MobileCard :h="'normal'" :title="'绑定手机'">
     <form class="w-full grow flex flex-col justify-center" @submit="onSubmit">
       <!-- 手机号输入 -->
       <FormField v-slot="{ componentField }" name="phone" v-model="phone" :validate-on-blur="!isFieldDirty">

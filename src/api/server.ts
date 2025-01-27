@@ -3,7 +3,7 @@
  */
 
 import axios from 'axios'
-import type { FcResponse, IAnyObj, ApiResponse } from '@/types/axios'
+import type { FcResponse, IAnyObj, ApiResponse } from '@/types/modules/axios'
 
 import {
   handleRequestHeader,

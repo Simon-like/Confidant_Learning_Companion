@@ -53,7 +53,7 @@
     --text: 0 0% 92.2%;
     --text-foreground: 214 50% 12.5%;
     --text-blue: 180 100% 33.9%;
-    /* color: hsl(0, 84.2%, 60.2%);  */
+    /* color: hsl(210, 40%, 70%);  */
   }
 
   .dark {
@@ -108,15 +108,53 @@
   }
 
   h1 {
-    animation: sideInLeft 1s ease-out forwards;
-    opacity: 0;
+    @apply opacity-0 animate-sideInLeft;
+  }
+
+  h2 {
+    @apply opacity-0 animate-sideInLeft delay-500;
+  }
+
+  h3 {
+    @apply opacity-0 animate-sideInLeft delay-700;
   }
 
 }
 
 @layer components {
+
+  /* 背景 */
   .bgImg {
     @apply bg-androidImg sm:bg-webImg bg-cover bg-no-repeat;
+  }
+
+  /* 导航项样式 */
+  .nav-item {
+    position: relative;
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 550;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 3px;
+      background: #fff;
+      border-radius: 5px;
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: transform .5s;
+      font-size: 2em;
+    }
+
+    &:hover::after {
+      transform-origin: left;
+      transform: scaleX(1);
+    }
   }
 }
 
@@ -127,6 +165,17 @@
     color: #000;
     /* 字体颜色 */
     -webkit-text-stroke: 1.5px #fff;
+    /* 黑色边框 */
+    text-shadow: 6px 6px 8px rgba(0, 0, 0, 0.8);
+    /* 阴影效果 */
+    font-weight: 550;
+    white-space: nowrap;
+  }
+
+  .text-title-small {
+    color: #000;
+    /* 字体颜色 */
+    -webkit-text-stroke: 0.5px #fff;
     /* 黑色边框 */
     text-shadow: 6px 6px 8px rgba(0, 0, 0, 0.8);
     /* 阴影效果 */
@@ -154,6 +203,14 @@
   .line-js {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* flex反向靠边 */
+  .line-je {
+    display: flex;
+    justify-content: flex-end;
     align-items: center;
     width: 100%;
   }

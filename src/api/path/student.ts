@@ -1,9 +1,9 @@
 /**
  * @description 学生信息管理接口包
  */
-import { Get, Post, Delete, Put } from "../server"; //必须导入
-import type { ApiResponse } from "@/types/axios";
-import type { StudentInfo } from "@/types/databaseWeb";
+import { Get, Post, Delete, Put } from '../server' //必须导入
+import type { ApiResponse } from '@/types/modules/axios'
+import type { StudentInfo } from '@/types/databaseWeb'
 
 /**
  * 根据专业，院系，学院查询学员信息
@@ -13,13 +13,13 @@ import type { StudentInfo } from "@/types/databaseWeb";
  * @returns
  */
 async function getStudentInfo__ByType(
-  major_id: string = "",
-  department_id: string = "",
-  college_id: string = ""
+  major_id: string = '',
+  department_id: string = '',
+  college_id: string = '',
 ): ApiResponse<StudentInfo[]> {
   return await Get<StudentInfo[]>(
-    `/student1?major_id=${major_id}&department_id=${department_id}&college_id=${college_id}`
-  );
+    `/student1?major_id=${major_id}&department_id=${department_id}&college_id=${college_id}`,
+  )
   //对于get请求通常使用路径参数，delete同；
   //ApiResponse<T>定义的是返回数据类型，没有就不填，里面的<T>和Get方法前的<T>的泛型类型请保持一致
   //表示后端返回数据中：{"code":1,"msg":"success","data":[]}里面的data的数据类型
@@ -30,7 +30,7 @@ async function getStudentInfo__ByType(
  * @returns
  */
 async function getStudentInfo__All(): ApiResponse<StudentInfo[]> {
-  return await Get<StudentInfo[]>("/student");
+  return await Get<StudentInfo[]>('/student')
 }
 
 /**
@@ -39,7 +39,7 @@ async function getStudentInfo__All(): ApiResponse<StudentInfo[]> {
  * @returns
  */
 async function postStudentInfo(data: StudentInfo): ApiResponse<any> {
-  return await Post<any>("/student", data);
+  return await Post<any>('/student', data)
 }
 //对于post请求，通常把数据打包到一个对象里放到请求体body里面，此处对对象做了类型定义格式为:
 // type StudentInfo = {
@@ -56,7 +56,7 @@ async function postStudentInfo(data: StudentInfo): ApiResponse<any> {
  * @returns
  */
 async function deleteStudentInfo(student_id: string) {
-  return await Delete(`/student/${student_id}`);
+  return await Delete(`/student/${student_id}`)
 }
 
 // 最后不要忘了导出
@@ -65,4 +65,4 @@ export const StudentApi = {
   getStudentInfo__All,
   postStudentInfo,
   deleteStudentInfo,
-};
+}

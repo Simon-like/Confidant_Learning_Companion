@@ -41,7 +41,7 @@ const onSubmit = handleSubmit((values) => {
 </script>
 
 <template>
-  <MobileCard :h="'normal'">
+  <MobileCard :h="'normal'" class=" opacity-0 animate-bottomIn delay-500">
     <form class="w-full grow flex flex-col justify-center" @submit="onSubmit">
       <!-- 手机号输入 -->
       <FormField v-slot="{ componentField }" name="phone" v-model="phone" :validate-on-blur="!isFieldDirty">

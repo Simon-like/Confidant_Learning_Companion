@@ -1,9 +1,9 @@
 /**
  * @description 选课信息管理接口包
  */
-import { Get, Post, Delete } from "../server";
-import type { ApiResponse } from "@/types/axios";
-import type { SCInfo } from "@/types/databaseWeb";
+import { Get, Post, Delete } from '../server'
+import type { ApiResponse } from '@/types/modules/axios'
+import type { SCInfo } from '@/types/databaseWeb'
 
 /**
  * 根据课程查询学生选课数据
@@ -11,7 +11,7 @@ import type { SCInfo } from "@/types/databaseWeb";
  * @returns
  */
 async function getSCInfo__ByCourse(course_id: string): ApiResponse<SCInfo[]> {
-  return await Get<SCInfo[]>(`/scc?course_id=${course_id}`);
+  return await Get<SCInfo[]>(`/scc?course_id=${course_id}`)
 }
 
 /**
@@ -20,7 +20,7 @@ async function getSCInfo__ByCourse(course_id: string): ApiResponse<SCInfo[]> {
  * @returns
  */
 async function getSCInfo__ByStudent(student_id: string): ApiResponse<SCInfo[]> {
-  return await Get<SCInfo[]>(`/scs?student_id=${student_id}`);
+  return await Get<SCInfo[]>(`/scs?student_id=${student_id}`)
 }
 
 /**
@@ -28,13 +28,13 @@ async function getSCInfo__ByStudent(student_id: string): ApiResponse<SCInfo[]> {
  * @returns
  */
 async function getSCInfo__All(): ApiResponse<SCInfo[]> {
-  return await Get<SCInfo[]>("/sc");
+  return await Get<SCInfo[]>('/sc')
 }
 
 type SCForm = {
-  student_id: string;
-  course_id: string;
-};
+  student_id: string
+  course_id: string
+}
 
 /**
  * 新增选课信息
@@ -42,7 +42,7 @@ type SCForm = {
  * @returns
  */
 async function postSCInfo(data: SCForm) {
-  return await Post("/sc", data);
+  return await Post('/sc', data)
 }
 
 /**
@@ -51,7 +51,7 @@ async function postSCInfo(data: SCForm) {
  * @returns
  */
 async function deleteSCInfo(id: number) {
-  return await Delete(`/sc/${id}`);
+  return await Delete(`/sc/${id}`)
 }
 
 export const SCApi = {
@@ -60,4 +60,4 @@ export const SCApi = {
   getSCInfo__All,
   postSCInfo,
   deleteSCInfo,
-};
+}

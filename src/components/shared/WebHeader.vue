@@ -9,7 +9,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <nav class="fixed top-0 line-jb w-full h-[12vh] bg-muted-bg
+  <nav class="max-sm:hidden fixed top-0 line-jb w-full h-[12vh] bg-muted-bg
     opacity-0 animate-topIn shadow-[0_4px_4px_rgba(0,0,0,0.5)] p-8 text-[1rem] select-none">
     <RouterLink class="line-js gap-4" :to="'/home'">
       <div class=" bg-logoImg rounded-full size-10 bg-cover"></div>

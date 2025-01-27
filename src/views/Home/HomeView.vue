@@ -26,7 +26,7 @@ const WebNavList: NavItemType[] = [
     </div>
     <!-- Web端头部导航 -->
     <WebHeader :NavItems="WebNavList">
-
+      <button class="button">登录/注册</button>
     </WebHeader>
     <!-- Web端大字标题 -->
     <div class=" max-sm:hidden line-jb h-screen space-x-[30px] select-none">

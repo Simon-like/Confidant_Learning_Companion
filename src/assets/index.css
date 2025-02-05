@@ -5,6 +5,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 变量以及主题 */
 @layer base {
   :root {
     --background: 0 0% 92.2%;
@@ -88,6 +89,7 @@
   }
 }
 
+/* 标签样式重置 */
 @layer base {
   @font-face {
     font-family: 'DeYiHei';
@@ -121,6 +123,7 @@
 
 }
 
+/* 自定义组件类 */
 @layer components {
 
   /* 背景 */
@@ -173,9 +176,6 @@
   }
 
   .button-accent {}
-}
-
-@layer utilities {
 
   /* 白框标题 */
   .text-title {
@@ -199,6 +199,16 @@
     font-weight: 550;
     white-space: nowrap;
   }
+
+  /* 黑框蓝底 */
+  .blue-ring-card {
+    @apply bg-background border-[2px] border-ring;
+    box-shadow: 5px 5px 0 hsl(var(--text-blue));
+  }
+}
+
+/* 自定义原子指令 */
+@layer utilities {
 
   /* flex横向对齐填充 */
   .line-jb {
@@ -238,4 +248,58 @@
     flex-direction: column;
     align-items: center;
   }
+
+  /* 自适应盒子内部文字居中，里面需要给一个p标签 */
+  .inner-text-middle {
+    @apply flex items-center justify-center h-full;
+  }
+
+  /* 竖向文字排布 */
+  .text-vertical-lr {
+    writing-mode: vertical-lr;
+  }
+
+  .w-100-minus-160 {
+    width: calc(100vw - 160px);
+  }
+}
+
+/* transiton动画效果 */
+
+/* 上滑效果 */
+.slideBottom-enter-active,
+.slideBottom-leave-active {
+  transition: 1s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.slideBottom-enter-from,
+.slideBottom-leave-to {
+  /* transform: translateY(100%); */
+  height: 0;
+  opacity: 0;
+}
+
+/* 淡入淡出效果 */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.8s;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* 淡入淡出效果 */
+.sideRight-enter-active,
+.sideRight-leave-active {
+  transition: all 1s cubic-bezier(0, 0, 0.2, 1);
+  position: absolute;
+  transform-origin: right;
+}
+
+.sideRight-enter-from,
+.sideRight-leave-to {
+  transform: scaleX(0);
+  opacity: 0;
 }

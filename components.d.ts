@@ -39,6 +39,7 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     ScrollArea: typeof import('./src/components/ui/scroll-area/ScrollArea.vue')['default']
     ScrollBar: typeof import('./src/components/ui/scroll-area/ScrollBar.vue')['default']
+    WebCard: typeof import('./src/components/reusable/WebCard.vue')['default']
     WebHeader: typeof import('./src/components/shared/WebHeader.vue')['default']
     ZButton: typeof import('./src/components/reusable/ZButton.vue')['default']
   }

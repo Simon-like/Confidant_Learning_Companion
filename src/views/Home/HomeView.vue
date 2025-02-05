@@ -1,17 +1,25 @@
 <script setup lang="ts">
 import WebHeader from '@/components/shared/WebHeader.vue';
+import router from '@/router';
 import type { NavItemType } from '@/types';
+import { useRoute } from 'vue-router';
 
 /**
  * @description 首页入口组件，用于登录注册欢迎用户
  * @date 2025/1/19
  */
 
+const route = useRoute();
+
+
 const WebNavList: NavItemType[] = [
   { id: 0, text: '关于我们', to: '/home1' },
   { id: 1, text: '更多产品', to: '/home2' },
 ]
 
+const onOpen_login = () => {
+  router.push('/home/weblogin')
+}
 </script>
 
 <template>
@@ -26,7 +34,7 @@ const WebNavList: NavItemType[] = [
     </div>
     <!-- Web端头部导航 -->
     <WebHeader :NavItems="WebNavList">
-      <button class="button">登录/注册</button>
+      <button class="button ml-5 p-2" @click="onOpen_login">登录/注册</button>
     </WebHeader>
     <!-- Web端大字标题 -->
     <div class=" max-sm:hidden line-jb h-screen space-x-[30px] select-none">
@@ -36,35 +44,23 @@ const WebNavList: NavItemType[] = [
         <h3 class="self-end text-[1rem]">路漫漫其修远</h3>
       </div>
       <div class="max-md:hidden md:w-1/5 h-full line-jc">
-        <div class="aspect-square w-4/5 bg-logoImg bg-cover rounded-buttonRadius animate-fade"></div>
+        <div class="aspect-square w-4/5 bg-logoImg bg-cover rounded-buttonRadius animate-scale"></div>
       </div>
       <div class="w-1/2 md:w-2/5 h-full flex items-end justify-end">
-        <img src="@/assets/images/fulilian_1.png" alt="芙丽琏" class="w-2/5 opacity-0 animate-fade delay-500">
+        <img src="@/assets/images/fulilian_1.png" alt="芙丽琏" class="w-2/5 opacity-0 animate-fade delay-150"
+          v-if="route.fullPath === '/home'">
       </div>
     </div>
-
-    <!-- 输入表单弹框 -->
-    <router-view v-slot="{ Component }">
-      <KeepAlive>
-        <transition name="slide">
-          <component :is="Component" />
-        </transition>
-      </KeepAlive>
+  </div>
+  <!-- 输入表单弹框 -->
+  <div class="sm:absolute sm:top-[12vh] sm:h-[88vh] sm:py-[60px] sm:px-[80px] sm:line-je">
+    <router-view v-slot="{ Component, route }">
+      <transition :name="route.meta.transition as string || 'fade'">
+        <component :is="Component" :key="route.path" />
+      </transition>
     </router-view>
   </div>
 
 </template>
 
-<style scoped>
-.slide-enter-active,
-.slide-leave-active {
-  transition: 1s cubic-bezier(0, 0, 0.2, 1);
-}
-
-.slide-enter-from,
-.slide-leave-to {
-  /* transform: translateY(100%); */
-  height: 0;
-  opacity: 0;
-}
-</style>
+<style scoped></style>

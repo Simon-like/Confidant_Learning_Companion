@@ -111,9 +111,13 @@ module.exports = {
           from: { transform: "translateY(100%)", opacity: 0 },
           to: { transform: "translateY(0)", opacity: 1 },
         },
-        "fade": {
+        "scale": {
           from: { transform: 'scale(0)', opacity: 0 },
           to: { transform: 'scale(1)', opacity: 1 }
+        },
+        "fade": {
+          from: { opacity: 0 },
+          to: { opacity: 1 }
         }
       },
       animation: {
@@ -125,7 +129,8 @@ module.exports = {
         "sideInRight": "sideInRight 1s cubic-bezier(0, 0, 0.2, 1) forwards",
         "topIn": "topIn 1s cubic-bezier(0, 0, 0.2, 1) forwards",
         "bottomIn": "bottomIn 1s cubic-bezier(0, 0, 0.2, 1) forwards",
-        "fade": "fade 1s cubic-bezier(0, 0, 0.2, 1) forwards",
+        "scale": "scale 1s cubic-bezier(0, 0, 0.2, 1) forwards",
+        "fade": "fade 2.5s cubic-bezier(0, 0, 0.2, 1) forwards",
       },
       backgroundImage: {
         "androidImg": "url('src/assets/images/bg-android.png')",

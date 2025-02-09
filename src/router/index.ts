@@ -76,6 +76,12 @@ const router = createRouter({
           component: () => import('@/views/Home/Layout/WebFormComponent/WebRegister.vue'),
           meta: { transition: 'sideRight' },
         },
+        {
+          path: 'webforget_1',
+          name: 'WebForget_1',
+          component: () => import('@/views/Home/Layout/WebFormComponent/WebForget_1.vue'),
+          meta: { transition: 'sideRight' },
+        },
       ],
     },
   ],

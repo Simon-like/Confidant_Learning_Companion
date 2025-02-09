@@ -162,8 +162,8 @@
 
   /* 按钮 */
   .button {
-    @apply rounded-inputRadius border-[2px] border-primary-foreground bg-primary text-text-foreground p-1 duration-150;
-    box-shadow: 2px 2px 0 rgba(0, 0, 0, 1);
+    @apply !rounded-inputRadius !border-[2px] !border-primary-foreground !bg-primary !text-text-foreground !p-1 !transition-all;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 1);
 
     &:hover {
       transform: scale(1.05);
@@ -175,7 +175,19 @@
     }
   }
 
-  .button-accent {}
+  .button-accent {
+    @apply !rounded-buttonRadius !border-[2px] !border-primary-foreground !bg-destructive !text-text-foreground !p-1 !transition-all;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 1);
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 rgba(0, 0, 0, 1);
+    }
+  }
 
   /* 白框标题 */
   .text-title {
@@ -202,8 +214,18 @@
 
   /* 黑框蓝底 */
   .blue-ring-card {
-    @apply bg-background border-[2px] border-ring;
+    @apply !bg-background !border-[2px] !border-ring;
     box-shadow: 5px 5px 0 hsl(var(--text-blue));
+  }
+
+  .blue-ring-card-small {
+    @apply !bg-background !border-[2px] !border-ring;
+    box-shadow: 4px 4px 0 hsl(var(--text-blue));
+  }
+
+  /* link链接 */
+  .link-blue {
+    @apply text-text-blue hover:underline hover:decoration-wavy;
   }
 }
 

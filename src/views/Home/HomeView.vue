@@ -53,7 +53,7 @@ const onOpen_login = () => {
     </div>
   </div>
   <!-- 输入表单弹框 -->
-  <div class="sm:absolute sm:top-[12vh] sm:h-[88vh] sm:py-[60px] sm:px-[80px] sm:line-je">
+  <div class="absolute w-full sm:top-[12vh] sm:h-[88vh] sm:py-[60px] sm:px-[80px] sm:line-je">
     <router-view v-slot="{ Component, route }">
       <transition :name="route.meta.transition as string || 'fade'">
         <component :is="Component" :key="route.path" />

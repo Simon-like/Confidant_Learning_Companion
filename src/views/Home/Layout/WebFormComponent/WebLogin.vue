@@ -37,10 +37,6 @@ const onSubmit = handleSubmit((values) => {
   console.log(phone.value);
   console.log({ values });
 });
-
-const onOpen = () => {
-  router.push('/home/webregister');
-}
 </script>
 
 <template>

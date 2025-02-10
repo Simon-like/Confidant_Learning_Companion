@@ -49,7 +49,7 @@ const handleComplete = (e: string[]) => console.log(e.join(''))
 const onSubmit = handleSubmit((values) => {
   console.log(phone.value);
   console.log({ values });
-  router.push('/home/forget_2');
+  router.replace('/home/webforget_2');
 }, (errors) => {
   console.log(errors);
   ElMessage.error("验证码错误");

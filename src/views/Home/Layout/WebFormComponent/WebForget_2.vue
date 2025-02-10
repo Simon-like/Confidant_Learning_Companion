@@ -1,9 +1,7 @@
 <script setup lang="ts">
 /**
- * @description 移动端忘记密码-密码输入
- * @date 2025/1/26
+ * @description 忘记密码--密码输入
  */
-import MobileCard from '@/components/reusable/MobileCard.vue';
 import { Button } from '@/components/ui/button';
 import {
   FormControl,
@@ -18,6 +16,7 @@ import { useForm } from 'vee-validate';
 import { ref } from 'vue';
 import * as z from 'zod';
 import { useRouter } from 'vue-router';
+import WebCard from '@/components/reusable/WebCard.vue';
 const router = useRouter();
 
 
@@ -44,16 +43,16 @@ const { isFieldDirty, handleSubmit, setFieldValue } = useForm({
 // 提交表单
 const onSubmit = handleSubmit((values) => {
   console.log({ values });
-  router.push('/home');
+  router.replace('/home');
 }, (errors) => {
   console.log(errors);
 });
+
 </script>
 
 <template>
-  <MobileCard :h="'normal'" :title="'忘记密码'">
+  <WebCard class="!w-[300px] h-[500px] select-none" :title="'忘记密码'">
     <form class="w-full grow flex flex-col justify-center" @submit="onSubmit">
-
       <!-- 新密码输入 -->
       <FormField v-slot="{ componentField }" name="password" v-model="password" :validate-on-blur="!isFieldDirty">
         <FormItem class="space-y-0" v-auto-animate>
@@ -61,13 +60,12 @@ const onSubmit = handleSubmit((values) => {
           </FormLabel>
           <FormControl>
             <Input type="text" placeholder="请输入密码" v-bind="componentField"
-              class="border-none shadow-none rounded-none focus-visible:ring-0" />
-            <div class="w-full h-[0.25rem] bg-primary rounded-lg"></div>
+              class="focus-visible:ring-0 !blue-ring-card-small !rounded-inputRadius" />
           </FormControl>
+          <div class="h-1 w-full"></div>
           <FormMessage />
         </FormItem>
       </FormField>
-
       <!-- 确认密码输入 -->
       <FormField v-slot="{ componentField }" name="confirm_password" v-model="confirm_password"
         :validate-on-blur="!isFieldDirty">
@@ -76,19 +74,18 @@ const onSubmit = handleSubmit((values) => {
           </FormLabel>
           <FormControl>
             <Input type="text" placeholder="请确认密码" v-bind="componentField"
-              class="border-none shadow-none rounded-none focus-visible:ring-0" />
-            <div class="w-full h-[0.25rem] bg-primary rounded-lg"></div>
+              class="focus-visible:ring-0 !blue-ring-card-small !rounded-inputRadius" />
           </FormControl>
+          <div class="h-1 w-full"></div>
           <FormMessage />
         </FormItem>
       </FormField>
-
       <!-- 下一步 -->
-      <Button type="submit" class="w-full my-6 text-[1.5rem] h-12">
+      <Button type="submit" class="w-full my-6 text-[1.5rem] h-12 button-accent">
         下一步
       </Button>
     </form>
-  </MobileCard>
+  </WebCard>
 </template>
 
 <style scoped></style>

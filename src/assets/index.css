@@ -162,7 +162,7 @@
 
   /* 按钮 */
   .button {
-    @apply !rounded-inputRadius !border-[2px] !border-primary-foreground !bg-primary !text-text-foreground !p-1 !transition-all;
+    @apply !rounded-inputRadius !border-[2px] !border-primary-foreground !bg-primary !text-text-foreground p-1 !transition-all;
     box-shadow: 3px 3px 0 rgba(0, 0, 0, 1);
 
     &:hover {
@@ -176,7 +176,7 @@
   }
 
   .button-accent {
-    @apply !rounded-buttonRadius !border-[2px] !border-primary-foreground !bg-destructive !text-text-foreground !p-1 !transition-all;
+    @apply !rounded-buttonRadius !border-[2px] !border-primary-foreground !bg-destructive !text-text-foreground p-1 !transition-all;
     box-shadow: 5px 5px 0 rgba(0, 0, 0, 1);
 
     &:hover {

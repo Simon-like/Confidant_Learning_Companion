@@ -20,7 +20,6 @@ declare module 'vue' {
     CarouselNext: typeof import('./src/components/ui/carousel/CarouselNext.vue')['default']
     CarouselPrevious: typeof import('./src/components/ui/carousel/CarouselPrevious.vue')['default']
     Checkbox: typeof import('./src/components/ui/checkbox/Checkbox.vue')['default']
-    ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
     FormControl: typeof import('./src/components/ui/form/FormControl.vue')['default']
     FormDescription: typeof import('./src/components/ui/form/FormDescription.vue')['default']
     FormItem: typeof import('./src/components/ui/form/FormItem.vue')['default']
@@ -41,6 +40,5 @@ declare module 'vue' {
     ScrollBar: typeof import('./src/components/ui/scroll-area/ScrollBar.vue')['default']
     WebCard: typeof import('./src/components/reusable/WebCard.vue')['default']
     WebHeader: typeof import('./src/components/shared/WebHeader.vue')['default']
-    ZButton: typeof import('./src/components/reusable/ZButton.vue')['default']
   }
 }

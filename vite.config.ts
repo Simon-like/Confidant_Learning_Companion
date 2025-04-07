@@ -23,7 +23,7 @@ export default defineConfig({
   ],
   server: {
     port: 5180,
-    host: '192.168.1.11',
+    host: '192.168.203.1',
     open: true,
   },
   resolve: {
